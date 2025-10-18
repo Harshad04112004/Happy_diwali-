@@ -1,0 +1,141 @@
+  /* Base Styles (Mobile-First Approach) */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            
+            /* Gradient Background for Festive Night Sky */
+            background: linear-gradient(135deg, #1f0842 0%, #3e1b7c 50%, #1f0842 100%);
+            
+            /* Add subtle texture/noise for depth */
+            background-image: radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              radial-gradient(circle at 90% 90%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%;
+            
+            /* Optional: Add a flickering light effect for ambiance */
+            animation: backgroundFlicker 15s infinite alternate;
+        }
+
+        @keyframes backgroundFlicker {
+            0% { filter: brightness(1); }
+            50% { filter: brightness(1.05); }
+            100% { filter: brightness(1); }
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+            padding: 25px 20px; /* Reduced padding for mobile */
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(255, 165, 0, 0.7); /* Slightly reduced glow for mobile */
+            text-align: center;
+            max-width: 600px;
+            width: 90%; /* Ensures it fills most of the screen */
+            backdrop-filter: blur(5px);
+            border: 1px solid gold; /* Reduced border thickness */
+        }
+
+        h1 {
+            font-size: 2.2em; /* Smaller font size for mobile */
+            color: #ffd700;
+            text-shadow: 1px 1px 3px #ff4500, 0 0 8px #ffaa00;
+            margin-bottom: 0.1em;
+            animation: pulseText 2s infinite;
+        }
+
+        @keyframes pulseText {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); } /* Less aggressive pulse on mobile */
+            100% { transform: scale(1); }
+        }
+
+        h2 {
+            font-size: 1.4em; /* Smaller font size for mobile */
+            color: #ffa500;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 1.1em; /* Smaller font size for mobile readability */
+            line-height: 1.5;
+            margin-bottom: 25px;
+            color: #ffe4b5;
+        }
+
+        .diya {
+            font-size: 3em; /* Smaller diya size for mobile */
+            cursor: pointer;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px orange); /* Reduced glow */
+            animation: diyaFlicker 1s infinite alternate;
+        }
+
+        @keyframes diyaFlicker {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0.95; transform: scale(1.02); }
+        }
+
+        button {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px 20px; /* Reduced button padding */
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 0 4px 10px rgba(255, 69, 0, 0.6);
+        }
+
+        button:hover {
+            background-color: #ff6347;
+            transform: translateY(-1px);
+        }
+        
+        button:active {
+            transform: translateY(1px); /* Ensure a good tap feedback on mobile */
+        }
+
+        .footer {
+            margin-top: 20px; /* Reduced margin */
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* === DESKTOP/TABLET OVERRIDES (Min-width 600px) === */
+        @media (min-width: 600px) {
+            .container {
+                padding: 40px 60px; /* Restore larger padding */
+                box-shadow: 0 0 50px rgba(255, 165, 0, 0.8);
+            }
+
+            h1 {
+                font-size: 3.5em; /* Restore larger font size */
+                text-shadow: 2px 2px 5px #ff4500, 0 0 10px #ffaa00;
+            }
+
+            h2 {
+                font-size: 1.8em; /* Restore larger font size */
+                margin-bottom: 30px;
+            }
+
+            .message {
+                font-size: 1.4em; /* Restore larger font size */
+                margin-bottom: 30px;
+            }
+
+            .diya {
+                font-size: 4em; /* Restore larger diya size */
+                filter: drop-shadow(0 0 15px orange);
+            }
+            
+            button {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+        }
